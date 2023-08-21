@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:student_apps/view/student_main_page.dart';
 
 class StudentOnboardingPage extends StatefulWidget {
   const StudentOnboardingPage({super.key});
@@ -21,7 +22,7 @@ class _StudentOnboardingPageState extends State<StudentOnboardingPage> {
             ),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 42,
           ),
 
@@ -37,7 +38,7 @@ class _StudentOnboardingPageState extends State<StudentOnboardingPage> {
               ),
 
               //
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
 
@@ -50,7 +51,7 @@ class _StudentOnboardingPageState extends State<StudentOnboardingPage> {
               ),
 
               //
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Text(
                 "Upload class study materials, create\nelectronic flashcards to study.",
@@ -63,19 +64,28 @@ class _StudentOnboardingPageState extends State<StudentOnboardingPage> {
           ),
 
           //
-          Container(
-            margin: EdgeInsets.only(top: 38, bottom: 24),
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(42),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-            child: Text(
-              "Let's Start",
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                fontSize: 18,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => StudentMainPage(),
+                ),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 38, bottom: 24),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(42),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+              child: Text(
+                "Let's Start",
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
               ),
             ),
           ),
