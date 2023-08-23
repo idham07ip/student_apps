@@ -93,7 +93,16 @@ class _StudentMainPageState extends State<StudentMainPage> {
                       horizontal: 16,
                       vertical: 16,
                     ),
-                    child: const TextField(),
+                    padding: EdgeInsets.symmetric(horizontal: 12),
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        icon: Icon(
+                          Icons.search,
+                        ),
+                        hintText: "Search",
+                      ),
+                    ),
                   ),
 
                   //
@@ -127,9 +136,93 @@ class _StudentMainPageState extends State<StudentMainPage> {
                           //
                           Container(
                             height: 240,
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
                             decoration: BoxDecoration(
                               color: Colors.deepPurple[100],
                               borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: 16,
+                                  right: 16,
+                                  bottom: 16,
+                                  top: 16,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                        ),
+                                        child: IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(
+                                            Icons.calculate,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        "Basic Mathematics",
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      Text('Today, 08:15pm'),
+                                      Row(
+                                        children: [
+                                          Container(
+                                            height: 32,
+                                            width: 32,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          Text(
+                                            "Cucung Sukardi",
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 8,
+                                  right: 8,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Homework",
+                                        ),
+                                        Icon(
+                                          Icons.check_circle,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
 
@@ -280,7 +373,7 @@ class _StudentMainPageState extends State<StudentMainPage> {
           ],
         ),
       ),
-      backgroundColor: Colors.red,
+      // backgroundColor: Colors.red,
     );
   }
 }
